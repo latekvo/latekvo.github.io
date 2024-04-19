@@ -1,10 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import IconButton from '../components/IconButton';
+import gh_white from '../icons/github_white.png';
+import li_white from '../icons/linkedin_white.png';
+
 ---
 
 <Layout title="Ignacy Łątka">
 	<main>
+
+		<IconButton src={gh_white.src} href="https://github.com/latekvo">latekvo</IconButton>
+		<IconButton src={li_white.src} href="https://www.linkedin.com/in/ignacy-latka/">ignacy-latka</IconButton>
+
+
 		<div class="header">
 			<h1>Hi, I'm <span class="text-gradient">Ignacy</span></h1>
 			<h3>Developing software since 2020.</h3>
