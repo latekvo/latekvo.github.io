@@ -7,6 +7,7 @@ import Card from '../components/Card.astro';
 	<main>
 		<div class="header">
 			<h1>Hi, I'm <span class="text-gradient">Ignacy</span></h1>
+			<h3>Developing software since 2020.</h3>
 		</div>
 
 		<h2>Projects<span class="text-gradient">.</span></h2>
@@ -19,17 +20,17 @@ import Card from '../components/Card.astro';
 			<Card
 				href="https://github.com/latekvo/art-institute-of-chicago-app/"
 				title="Virtual Museum"
-				body="Supercharge your project with new frameworks and libraries."
+				body="Browse artworks of Art Institute of Chicago."
 			/>
 			<Card
 				href="https://github.com/LatekVo/angular-messenger/"
 				title="Messenger from scratch"
-				body="Explore a galaxy of community-built starter themes."
+				body="Participate in conversations with people from anywhere in the world."
 			/>
 			<Card
 				href="https://github.com/LatekVo/web-chess/"
 				title="Chess from scratch"
-				body="Come say hi to our amazing Discord community. ❤️"
+				body="Play chess online with my custom-built chess engine."
 			/>
 		</ul>
 	</main>
@@ -38,21 +39,25 @@ import Card from '../components/Card.astro';
 <style>
 	main {
 		margin: auto;
-		padding: 1rem;
+		padding: 2rem;
 		width: 800px;
 		max-width: calc(100% - 2rem);
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
 	}
-	header {
+	.header {
 		text-align: left;
+		margin-bottom: 50px;
 	}
 	h1 {
 		font-size: 4rem;
 		font-weight: 700;
 		line-height: 1;
-		margin-bottom: 1em;
+	}
+	h3 {
+		color: grey;
+		font-weight: 500;
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
