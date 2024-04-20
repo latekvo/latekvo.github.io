@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import IconButton from '../components/IconButton';
+import IconButton from '../components/IconButton.astro';
 import gh_white from '../icons/github_white.png';
 import li_white from '../icons/linkedin_white.png';
 
@@ -10,13 +10,15 @@ import li_white from '../icons/linkedin_white.png';
 <Layout title="Ignacy Łątka">
 	<main>
 
-		<IconButton src={gh_white.src} href="https://github.com/latekvo">latekvo</IconButton>
-		<IconButton src={li_white.src} href="https://www.linkedin.com/in/ignacy-latka/">ignacy-latka</IconButton>
-
-
 		<div class="header">
 			<h1>Hi, I'm <span class="text-gradient">Ignacy</span></h1>
 			<h3>Developing software since 2020.</h3>
+		</div>
+
+		<div class="socials">
+			<h2>Socials<span class="text-gradient">.</span></h2>
+			<IconButton src={gh_white.src} text="latekvo" href="https://github.com/latekvo"/>
+			<IconButton src={li_white.src} text="ignacy-latka" href="https://www.linkedin.com/in/ignacy-latka/"/>	
 		</div>
 
 		<h2>Projects<span class="text-gradient">.</span></h2>
@@ -57,7 +59,7 @@ import li_white from '../icons/linkedin_white.png';
 	}
 	.header {
 		text-align: left;
-		margin-bottom: 50px;
+		margin-bottom: 35px;
 	}
 	h1 {
 		font-size: 4rem;
@@ -67,6 +69,9 @@ import li_white from '../icons/linkedin_white.png';
 	h3 {
 		color: grey;
 		font-weight: 500;
+	}
+	.socials {
+		margin-bottom: 30px;
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
