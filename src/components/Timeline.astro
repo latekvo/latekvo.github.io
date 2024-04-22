@@ -1,0 +1,60 @@
+---
+interface Props {
+	startYear: number;
+    gridHeight: number;
+}
+
+const { startYear, gridHeight } = Astro.props;
+
+const gridHeightStyle = `height: ${gridHeight}px;`
+
+const currentDate = new Date();
+
+let currentYear = currentDate.getFullYear();
+let currentMonth = currentDate.getMonth();
+
+let currentQuarter = 1;
+if (currentMonth > 2) currentQuarter = 2;
+if (currentMonth > 5) currentQuarter = 3;
+if (currentMonth > 8) currentQuarter = 4;
+
+const timelineList: string[] = [];
+
+while (currentYear >= startYear) {
+    timelineList.push(`${currentYear}Q${currentQuarter}`);
+    currentQuarter -= 1;
+    if (currentQuarter < 1) {
+        currentYear -= 1;
+        currentQuarter = 4;
+    }
+}
+
+---
+
+<ul class="timeline">
+    {
+        timelineList.map(item => (
+          <li class="timeline-row" style={gridHeightStyle}>
+            {
+                item
+            }
+            <div class="vertical-fill-line"/>
+          </li>
+        ))
+      }
+</ul>
+<style>
+    .timeline {
+        list-style: none;
+    }
+    .timeline-row {
+        width: fit-content;
+    }
+    .vertical-fill-line {
+        border-radius: 1px;
+        background-color: white;
+        width: 1px;
+        height: calc(100% - 1lh);
+        margin: auto;
+    }
+</style>

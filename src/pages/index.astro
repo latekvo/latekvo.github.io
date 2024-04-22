@@ -4,6 +4,7 @@ import Card from '../components/Card.astro';
 import IconButton from '../components/IconButton.astro';
 import gh_white from '../icons/github_white.png';
 import li_white from '../icons/linkedin_white.png';
+import Timeline from '../components/Timeline.astro';
 
 ---
 
@@ -22,7 +23,7 @@ import li_white from '../icons/linkedin_white.png';
 		</div>
 
 		<h2>Projects<span class="text-gradient">.</span></h2>
-		<ul role="list" class="link-card-grid">
+		<ul role="list" class="projects-container">
 			<Card
 				href="https://github.com/latekvo/ResearchChain/"
 				title="Research Chain"
@@ -44,6 +45,12 @@ import li_white from '../icons/linkedin_white.png';
 				body="Play chess online with my custom-built chess engine."
 			/>
 		</ul>
+
+		<h2>Experience<span class="text-gradient">.</span></h2>
+		<div class="experience-container">
+			<Timeline startYear={2021} gridHeight={84}>
+		</div>
+
 	</main>
 </Layout>
 
@@ -98,10 +105,14 @@ import li_white from '../icons/linkedin_white.png';
 	.instructions strong {
 		color: rgb(var(--accent-light));
 	}
-	.link-card-grid {
+	.projects-container {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 2rem;
 		padding: 0;
+	}
+	.experience-container {
+		flex: 1;
+		gap: 2rem;
 	}
 </style>
