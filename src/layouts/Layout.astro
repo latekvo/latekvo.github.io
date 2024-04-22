@@ -1,4 +1,7 @@
 ---
+import IconButton from '../components/IconButton.astro';
+import gh_logo from '../icons/github_white.png';
+
 interface Props {
 	title: string;
 }
@@ -19,6 +22,13 @@ const { title } = Astro.props;
 	<body>
 		<slot />
 	</body>
+	<footer class="global-footer">
+		Made by 
+		<IconButton src={undefined} text="latekvo" href="https://github.com/latekvo"/>
+		with 
+		<IconButton src={undefined} text="Astro" href="https://github.com/latekvo"/>
+		.
+	</footer>
 </html>
 <style is:global>
 	:root {
@@ -47,5 +57,10 @@ const { title } = Astro.props;
 			Bitstream Vera Sans Mono,
 			Courier New,
 			monospace;
+	}
+	.global-footer {
+		color: white;
+		margin: auto;
+		width: fit-content;
 	}
 </style>

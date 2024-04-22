@@ -1,7 +1,7 @@
 ---
 interface Props {
 	text: string;
-	src: string;
+	src: string | undefined;
 	href: string;
 }
 
@@ -10,7 +10,10 @@ const { text, src, href } = Astro.props;
 
 <li class="link-card">
 	<a href={href}>
-		<img src={src}/>
+		{ 
+			src && 
+			<img src={src}/>	
+		}
 		<p>
 			{text}
 		</p>
